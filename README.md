@@ -14,7 +14,7 @@ por exemplo);
 - Realizar algumas análises dos dados e mostrar os resultados;
 ## Dados Disponíveis
 Os dados estão disponíveis no site da agência responsável por licenciar e
-regular os táxis na cidade de NY: https://www.nyc.gov/site/tlc/about/tlctrip-record-data.page
+regular os táxis na cidade de NY: https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
 Num primeiro momento, precisamos que sejam armazenados e
 disponibilizados os dados de Janeiro a Maio de 2023.
 ## Considerações
