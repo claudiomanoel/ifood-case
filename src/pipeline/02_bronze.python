@@ -11,18 +11,9 @@
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
-DATA_FILE_TYPES = ['fhv_tripdata', 'fhvhv_tripdata', 'green_tripdata',  'yellow_tripdata']
+DATA_FILE_TYPES = ['green_tripdata',  'yellow_tripdata']
 
 TABLE_CONFIGURATION = {}
-TABLE_CONFIGURATION["fhv_tripdata"] = {
-  "partition_key" : "pickup_date",
-  "partition_key_datetime": "pickup_datetime",
-  "columns" :	[{"column_name":"dispatching_base_num","data_type":"STRING"},{"column_name":"pickup_datetime","data_type":"TIMESTAMP_NTZ"},{"column_name":"dropOff_datetime","data_type":"TIMESTAMP_NTZ"},{"column_name":"PUlocationID","data_type":"DOUBLE"},{"column_name":"DOlocationID","data_type":"DOUBLE"},{"column_name":"SR_Flag","data_type":"INT"},{"column_name":"Affiliated_base_number","data_type":"STRING"}]}
-
-TABLE_CONFIGURATION["fhvhv_tripdata"] = {
-  "partition_key" : "pickup_date",
-  "partition_key_datetime": "pickup_datetime",
-  "columns" :	[{"column_name":"hvfhs_license_num","data_type":"STRING"},{"column_name":"dispatching_base_num","data_type":"STRING"},{"column_name":"originating_base_num","data_type":"STRING"},{"column_name":"request_datetime","data_type":"TIMESTAMP_NTZ"},{"column_name":"on_scene_datetime","data_type":"TIMESTAMP_NTZ"},{"column_name":"pickup_datetime","data_type":"TIMESTAMP_NTZ"},{"column_name":"dropoff_datetime","data_type":"TIMESTAMP_NTZ"},{"column_name":"PULocationID","data_type":"LONG"},{"column_name":"DOLocationID","data_type":"LONG"},{"column_name":"trip_miles","data_type":"DOUBLE"},{"column_name":"trip_time","data_type":"LONG"},{"column_name":"base_passenger_fare","data_type":"DOUBLE"},{"column_name":"tolls","data_type":"DOUBLE"},{"column_name":"bcf","data_type":"DOUBLE"},{"column_name":"sales_tax","data_type":"DOUBLE"},{"column_name":"congestion_surcharge","data_type":"DOUBLE"},{"column_name":"airport_fee","data_type":"DOUBLE"},{"column_name":"tips","data_type":"DOUBLE"},{"column_name":"driver_pay","data_type":"DOUBLE"},{"column_name":"shared_request_flag","data_type":"STRING"},{"column_name":"shared_match_flag","data_type":"STRING"},{"column_name":"access_a_ride_flag","data_type":"STRING"},{"column_name":"wav_request_flag","data_type":"STRING"},{"column_name":"wav_match_flag","data_type":"STRING"}]}
 
 TABLE_CONFIGURATION["green_tripdata"] = {
   "partition_key" : "lpep_pickup_date",

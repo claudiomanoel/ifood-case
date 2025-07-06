@@ -12,7 +12,7 @@
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
-DATA_FILE_TYPES = ['fhv_tripdata', 'fhvhv_tripdata', 'green_tripdata',  'yellow_tripdata']
+DATA_FILE_TYPES = ['green_tripdata',  'yellow_tripdata']
 VOLUME_PATH = '/Volumes/workspace/01_transient/new_york_trips'
 
 def import_files(date_to_ingest, file_type: str):
