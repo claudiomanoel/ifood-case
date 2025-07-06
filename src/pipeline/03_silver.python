@@ -1,0 +1,8 @@
+# Read bronze tables
+bronze_df = spark.read.table("workspace.02_bronze.fhv_tripdata")
+
+# Perform transformations to create silver tables
+silver_df = bronze_df.select("SR_Flag", "pickup_date")
+
+# Write to silver tables
+silver_df.write.mode("overwrite").saveAsTable("workspace.03_silver.fhv_tripdata")
