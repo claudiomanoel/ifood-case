@@ -43,10 +43,34 @@ community.cloud.databricks.com/);
 4. A escolha da tecnologia de metadados fica a seu critério;
 5. A escolha da linguagem de consulta (SQL, PySpark e etc) para os
 usuários finais fica a seu critério;
-2. **Código SQL ou PySpark estruturado da forma que preferir com
+6. **Código SQL ou PySpark estruturado da forma que preferir com
 as respostas para as seguintes perguntas:**
-2. Qual a média de valor total (total\_amount) recebido em um mês
+6.1. Qual a média de valor total (total\_amount) recebido em um mês
 considerando todos os yellow táxis da frota?
-3. Qual a média de passageiros (passenger\_count) por cada hora do dia
+6.2. Qual a média de passageiros (passenger\_count) por cada hora do dia
 que pegaram táxi no mês de maio considerando todos os táxis da
 frota?
+
+## Estrutura do Repositório
+ 
+    ifood-case/
+    ├─ src/          # Código fonte da solução
+    ├─ analysis/     # Scripts/Notebooks com as repostas das perguntas
+    ├─ README.md
+    └─ requirements.txt
+    
+## Critérios de Avaliação
+
+Serão avaliados:
+- Qualidade e organização do código
+- Processo de análise exploratória
+- Justificativa das escolhas técnicas
+- Criatividade na solução proposta
+- Clareza na comunicação dos resultados
+  
+## Instruções de Entrega
+
+1. Crie um repositório público ou privado no GitHub
+2. Desenvolva sua solução
+3. Atualize o README com instruções de execução
+4. Envie o link do seu repositório
