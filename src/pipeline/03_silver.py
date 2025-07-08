@@ -1,3 +1,10 @@
+# Databricks notebook source
+# MAGIC %md
+# MAGIC ### Create silver tables
+# MAGIC
+
+# COMMAND ----------
+
 from pyspark.sql.functions import lit, current_timestamp
 
 def import_green_trip_data():

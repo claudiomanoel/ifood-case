@@ -1,3 +1,11 @@
+# Databricks notebook source
+# MAGIC %md
+# MAGIC
+# MAGIC ## Create transient tables from file
+# MAGIC
+
+# COMMAND ----------
+
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 

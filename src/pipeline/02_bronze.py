@@ -1,3 +1,9 @@
+# Databricks notebook source
+# MAGIC %md
+# MAGIC ### Create bronze tables
+
+# COMMAND ----------
+
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 

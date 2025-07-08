@@ -1,3 +1,11 @@
+# Databricks notebook source
+# MAGIC %md
+# MAGIC
+# MAGIC ### Create gold tables
+# MAGIC
+
+# COMMAND ----------
+
 from pyspark.sql.functions import hour, col, sum, count, lit
 
 def run():
