@@ -17,7 +17,7 @@ def import_files(date_to_ingest, file_type: str):
     Import files from the specified path and create tables in the workspace.
     
     :param date_to_ingest: The date for which the files are to be imported.
-    :param file_type: The type of file to be imported (e.g., 'fhv_tripdata', 'fhvhv_tripdata', etc.).
+    :param file_type: The type of file to be imported (e.g., 'green_tripdata', 'yellow_tripdata', etc.).
     :return: None
     """
 
