@@ -6,7 +6,7 @@ Sendo assim, os arquivos de Janeiro/2023 a Maio/2023 das viagens dos Taxis Verde
 
 Dessa maneira, a Landing Zone está na base **01_transient**, volume **new_york_trips** como mostra a imagem abaixo:
 
-![Arquivos de viagens do site de New York](readme_images/01_arquivos_viagens_site_new_york.png).
+![Arquivos de viagens do site de New York](readme_images/01_arquivos_viagens_site_new_york.png)
 
 Além disso, o DataBricks salva efetivamente esses arquivos/tabelas no S3 conforme exemplo abaixo:
 
