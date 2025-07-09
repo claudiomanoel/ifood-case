@@ -61,7 +61,9 @@ def import_bronze(date_to_ingest, file_type: str, list_table_names: list):
 
     spark.sql(sql)
 
-    sql = f"""INSERT INTO {bronze_table_name} ({columns_list_description},transient_table_name) SELECT {columns_list_description}, '{transient_table_name}' FROM {full_transient_table_name};"""
+    sql = f"""INSERT INTO {bronze_table_name} ({columns_list_description},transient_table_name) SELECT {columns_list_description}, '{transient_table_name}' FROM {full_transient_table_name}
+    where (total_amount < 0
+or passenger_count < 0 or trip_distance < 0 or fare_amount < 0 or extra < 0 or mta_tax < 0 or tip_amount < 0 or tolls_amount < 0 or improvement_surcharge < 0) = False;"""
         
     spark.sql(sql)
 
