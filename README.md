@@ -51,6 +51,12 @@ Com isso, temos simplicidade para desenvolvimento com o código direto no Notebo
 
 Todo o código da pasta **explorations** do pipeline está em src/pipeline.
 
+Para acompanhamento da saúde dos dados, foram criados os alertas *"Green Tripdata with pickup and dropff date problems"* e *"Yellow Tripdata with pickup and dropff date problems"* para checar diariamente nas tabelas bronze respectivas se a data de fim da viagem é menor que a data de início com as consultas *"select count(1) from workspace.`02_bronze`.green_tripdata
+where lpep_pickup_datetime > lpep_dropoff_datetime"* e "*select count(1) from workspace.`02_bronze`.yellow_tripdata as t
+where tpep_pickup_datetime > tpep_dropoff_datetime*". Abaixo a listagem dos alertas no DataBricks Comunity Edition.
+
+![Alertas para avaliação da qualidade dos dados continuamente](readme_images\10_alertas.png)
+
 ### 3. Apresentação dos resultados
 
 Finalmente, para a apresentação dos resultados das perguntas, foram criados os scripts sql *"01_New York Taxi Yellow Cab Average Fare Early 2023.sql"* e *"02_Average Passengers Per Hour in May 2023.sql"* na pasta **answers** mostrado abaixo:
