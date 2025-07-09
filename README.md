@@ -20,14 +20,21 @@ A arquitetura de dados escolhida então no Lakehouse foi a Medalhão, em que tem
 
 
 2. **02_bronze**: camada de dados com tabelas sem tratamento sendo espelhos das fontes originais. Dessa forma, teremos então 02 tabelas, **green_tripdata** e **yellow_tripdata**. Ambas possuirão todas as colunas dos arquivos além da **transient_table_name**(nome do arquivo que gerou a importação dos dados) e **ingestion_datetime** (data e horário em UTC com o momento de criação do registro no LakeHouse). Com essas duas colunas, conseguiremos rastrear o arquivo gerado do registro e também a data de geração do registro na bronze. Abaixo as imagens das tabelas bronze.
+
+Nas tabelas bronze não são importados dados considerados absurdos com base caso tenham alguma condição abaixo contemplada: 
+
+*total_amount < 0
+or passenger_count < 0 or trip_distance < 0 or fare_amount < 0 or extra < 0 or mta_tax < 0 or tip_amount < 0 or tolls_amount < 0 or improvement_surcharge < 0*
+
+
    
 ![Tabelas Bronze](readme_images\04_tabelas_bronze.png)
 
 Outras colunas adicionais foram as colunas de partição dos dados por dia na coluna **lpep_pickup_date** da tabela **green_trip_data** e coluna **tpep_pickup_date** na tabela **yellow_tripdata**. Assim a busca dos dados para dias específicos é otimizada com os campos de partição.
 
-3. **03_silver**: camada de dados com a tabela tratada new_york_taxi que unifica os dados das tabelas bronze **green_tripdata** e **yellow_tripdata** com as colunas: *vendor_id, passenger_count,total_amount, pickup_date, pickup_datetime, dropoff_datetime, color e __timestamp*. Além disso, são realizadas tratamentos de dados para a inserção dos registros.
+1. **03_silver**: camada de dados com a tabela tratada new_york_taxi que unifica os dados das tabelas bronze **green_tripdata** e **yellow_tripdata** com as colunas: *vendor_id, passenger_count,total_amount, pickup_date, pickup_datetime, dropoff_datetime, color e __timestamp*. Além disso, são realizadas tratamentos de dados para a inserção dos registros.
 
-4. **04_gold**: camada com os dados com dados mais agregados possuindo a tabela **new_york_taxi_by_hour**. Nela as informações estão agreagadas por dia, hora e cor do veículo e é utilizada para apresentação das respostas do desafio. As colunas dela são: 
+2. **04_gold**: camada com os dados com dados mais agregados possuindo a tabela **new_york_taxi_by_hour**. Nela as informações estão agreagadas por dia, hora e cor do veículo e é utilizada para apresentação das respostas do desafio. As colunas dela são: 
 *pickup_date, pickup_hour, color, quantity, total_amount e passenger_count*
 
 ### 2. Processamento dos dados
