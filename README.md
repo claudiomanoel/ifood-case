@@ -42,4 +42,24 @@ Por conseguinte, foi criado o Job **New York Taxi Driver Job**, em que cada arqu
 
 Com isso, temos simplicidade para desenvolvimento com o código direto no Notebooks facilitando inclusive depuração e a orquestração do processamento sendo realizada via Job. 
 
+Todo o código da pasta **explorations** do pipeline está em src/pipeline.
+
 ### 3. Apresentação dos resultados
+
+Finalmente, para a apresentação dos resultados das perguntas, foram criados os scripts sql *"01_New York Taxi Yellow Cab Average Fare Early 2023.sql"* e *"02_Average Passengers Per Hour in May 2023.sql"* na pasta **answers** mostrado abaixo:
+
+![Scripts SQL das respostas](readme_images\07_script_sql_resposta.png)
+
+Finalmente para a apresentação dos resultados foi criado o Dashboard no Pipeline que mostra os resultados das duas consultas como nas imagens abaixo:
+
+*Qual a média de valor total (total\_amount) recebido em um mês
+considerando todos os yellow táxis da frota?* 
+
+![Qual a média de valor total (total\_amount) recebido em um mês considerando todos os yellow táxis da frota?](readme_images\08_sql_result_01.jpg)
+
+
+*Qual a média de passageiros (passenger\_count) por cada hora do dia
+que pegaram táxi no mês de maio considerando todos os táxis da
+frota?* 
+
+![Qual a média de passageiros (passenger\_count) por cada hora do dia que pegaram táxi no mês de maio considerando todos os táxis da frota?](readme_images\09_sql_result_02.jpg)
